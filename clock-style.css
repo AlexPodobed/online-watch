@@ -1,0 +1,28 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+
+
+.wrapper{
+	border: 2px solid black;
+	width: 330px;
+	font-family: Verdana;
+	font-style: italic;
+	/*border-radius: 14px;*/
+	box-shadow: 2px 2px 12px black;
+}
+
+h2{
+	padding: 2px 20px;
+	background-color: black;
+	color: white;
+
+}
+.clock-block{
+	padding: 10px 15px;
+	font-size: 50px;
+	text-align: center;
+}
+
