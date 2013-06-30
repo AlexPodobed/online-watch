@@ -6,6 +6,7 @@
 
 
 .wrapper{
+	margin: 10px;
 	border: 2px solid black;
 	width: 330px;
 	font-family: Verdana;

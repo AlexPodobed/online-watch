@@ -3,10 +3,10 @@
 
 	function Clock() {
 		this.clock_block = document.querySelector('.clock-block');
+		this.title = document.querySelector('.wrapper h2');		
 		this.wrapper = document.querySelector('.wrapper');
-		this.title = document.querySelector('.wrapper h2');
-		this.flag = true;
 		this.date_obj = this.getTime();
+		this.flag = true;
 		this.timer_id;
 
 		this.init();
@@ -37,7 +37,6 @@
 			year: date.getFullYear(),
 			month: this.beautifyTime(date.getMonth() + 1),
 			date: this.beautifyTime(date.getDate()),
-			day: date.getDay(),
 			hour: this.beautifyTime(date.getHours()),
 			minute: this.beautifyTime(date.getMinutes()),
 			second: this.beautifyTime(date.getSeconds())
@@ -88,8 +87,8 @@
 
 	function dragAndDrop(e) {
 		var 	self,box,
-			shiftX,
-			shiftY;
+				shiftX,
+				shiftY;
 
 		self = this;
 		box = this.getBoundingClientRect();
