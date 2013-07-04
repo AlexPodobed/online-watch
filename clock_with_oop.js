@@ -86,20 +86,26 @@
 	};
 
 	function dragAndDrop(e) {
-		var 	self,box,
-				shiftX,
-				shiftY;
+		var self, box,
+			shiftX, shiftY,
+			marginLeft,
+			marginTop;
 
 		self = this;
 		box = this.getBoundingClientRect();
-		shiftX = e.pageX - box.left ;
-		shiftY = e.pageY - box.top;
+		marginLeft = getComputedStyle(this).marginLeft;
+		marginTop = getComputedStyle(this).marginTop;
+		marginLeft = parseInt(marginLeft.slice(0,marginLeft.length-2),10);
+		marginTop = parseInt(marginTop.slice(0,marginTop.length-2),10);
+		console.log(box.left, box.top)
+		shiftX = e.pageX - box.left;
+		shiftY = e.pageY - box.top;	
 
 		this.style.position = 'absolute';
 
 		function moveAt(e) {
-			self.style.left = e.pageX - shiftX - 10 + "px";
-			self.style.top = e.pageY - shiftY -10 + "px";
+			self.style.left = e.pageX - shiftX - marginLeft + "px";
+			self.style.top = e.pageY - shiftY - marginTop + "px";
 		}
 
 		document.onmousemove = function(e) {
